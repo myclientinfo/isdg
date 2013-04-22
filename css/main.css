@@ -1,0 +1,235 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+html, body {
+	height: 100%;
+}
+
+body, p {
+	font-family: "DroidSansRegular", Arial, Helvetica, sans-serif;
+}
+
+body {
+	background-image: url(/img/Small-Grid-100x100.png);
+}
+
+h1, h2, h3, h4, h5, h6, .accordion {
+	font-family: "questrialregular", Arial, Helvetica, sans-serif;
+	font-weight:normal;
+}
+
+
+h1 {
+	display: inline-block;
+	/*font-family: "FFFTusjBold";*/
+	font-size: 40px;
+	color: white;
+	margin: 0px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+
+h3 {
+	font-size: 16px;
+
+}
+
+
+
+
+header, footer {
+	color: white;
+	background-color: #999;
+}
+
+header {
+	padding: 20px;
+	overflow:auto;
+}
+
+
+body #wrap > .container-fluid {
+padding: 0px;
+
+}
+
+nav {
+	position: relative;
+	top: -20px;
+	margin-bottom: -40px;
+}
+
+nav img {
+	margin: 20px;
+	margin-right: 0px;
+}
+
+#section-content ul.nav-pills {
+}
+
+#section-content ul.nav-pills li {
+	margin-bottom: 3px;
+}
+
+#section-content ul.nav-pills a {
+	color: white;
+}
+
+
+#page-content {
+	overflow: auto;
+	height: auto;
+}
+
+.accordion {
+	position: relative;
+	top: 20px;
+	left: 20px;
+}
+
+
+.nav-pills > li > a {
+
+}
+
+.nav {
+	margin-bottom: 0px;
+}
+
+#section-content {
+	padding: 10px 10px;
+	overflow: auto;
+}
+
+.nav-pills > li > a {
+	margin: 0px;
+}
+#section-content ul.nav-pills a {
+	border-radius: 0px;
+
+}
+
+#accordion2 div.accordion-group.building-scheme-design .accordion-heading a, #section-content .building-scheme-design li a:hover, 
+ #accordion2 div.accordion-group.admin-pieces .accordion-heading a, #section-content .admin-pieces li a:hover, .admin_accordion   .accordion-heading {
+	background-color: #06C;
+}
+
+.building-scheme-design li, .admin-pieces li,  .admin_accordion li {
+	background-color: #09F;
+}
+
+#accordion2 div.accordion-group.materials .accordion-heading a, #accordion2 div.accordion-group.materials .accordion-heading a {
+	background-color: #F60;
+}
+
+#accordion2 div.accordion-group.materials li {
+	background-color: #F93;
+}
+
+#accordion2 div.accordion-group.structural-elements .accordion-heading a {
+	background-color: #096;
+}
+
+#accordion2 div.accordion-group.structural-elements li {
+	background-color: #9C3;
+}
+
+#accordion2 div.accordion-group.interface-guides .accordion-heading a {
+	background-color: #609;
+}
+
+#accordion2 div.accordion-group.interface-guides li {
+	background-color: #90C;
+} 
+
+.accordion-group {
+	border-width:0px;
+}
+	
+.accordion-inner {
+	padding: 0px;
+}
+
+.accordion-heading a {
+	
+	color: white;
+	font-size: 16px;
+}
+
+.accordion ul {
+	list-style-type: none;
+	margin: 0px;
+	border-width: 0px;
+}
+
+.accordion ul li{
+	margin: 3px;
+	padding: 5px;
+	border-width: 0px;
+	margin-right:0px;
+	margin-left: 5px;
+}
+
+
+
+.accordion ul li a {
+	color: white;
+	display: block;
+}
+
+
+.form-horizontal textarea {
+	width: 400px;
+	height: 200px;
+}
+
+
+nav {
+	float: right;
+}
+
+#calendar-popup {
+	position:absolute;
+	right: 25px;
+	display: none;
+	top: 45px;
+}
+
+#wrap {
+	height: 100%;
+	margin-bottom: -60px;
+}
+
+footer {
+	padding: 10px;
+}
+
+footer p {
+	margin: 10px;
+}
+
+#section-content table td, #section-content table th {
+	border: 1px solid #999;
+	padding: 8px;
+}
+
+#section-content table th {
+	background-color: #CCCCCC;
+}
+
+
+.calculator-digit, .calculator-oper, .calculator-ctrl, .calculator-inline {
+	border-radius: 0px !important;
+	border: 1px solid #999;
+}
+
+.calculator-inline {
+	padding: 4px;
+}
