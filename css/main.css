@@ -10,7 +10,7 @@ html, body {
 }
 
 body, p {
-	font-family: "DroidSansRegular", Arial, Helvetica, sans-serif;
+	font-family: "PTSansRegular", Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -18,14 +18,14 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .accordion {
-	font-family: "questrialregular", Arial, Helvetica, sans-serif;
+	font-family: "TitilliumText25L400wt", Arial, Helvetica, sans-serif;
 	font-weight:normal;
 }
 
 
 h1 {
 	display: inline-block;
-	/*font-family: "FFFTusjBold";*/
+	font-family: "TitilliumText25L1wt";
 	font-size: 40px;
 	color: white;
 	margin: 0px;
@@ -46,7 +46,7 @@ h3 {
 
 header, footer {
 	color: white;
-	background-color: #999;
+	background-color: #484759;
 }
 
 header {
@@ -117,11 +117,11 @@ nav img {
 }
 
 #accordion2 div.accordion-group.building-scheme-design .accordion-heading a, #section-content .building-scheme-design li a:hover, 
- #accordion2 div.accordion-group.admin-pieces .accordion-heading a, #section-content .admin-pieces li a:hover, .admin_accordion   .accordion-heading {
+ #accordion2 div.accordion-group.admin-pieces .accordion-heading a, #section-content .admin-pieces li a:hover {
 	background-color: #06C;
 }
 
-.building-scheme-design li, .admin-pieces li,  .admin_accordion li {
+.building-scheme-design li, .admin-pieces li {
 	background-color: #09F;
 }
 
@@ -184,11 +184,6 @@ nav img {
 	display: block;
 }
 
-
-.form-horizontal textarea {
-	width: 400px;
-	height: 200px;
-}
 
 
 nav {

@@ -2,7 +2,7 @@
 $(document).ready(function() {
 
 	$(document).on('click', '.accordion-inner a', function(theEvent){
-		console.log('clickety');
+		
 		theEvent.preventDefault();
 		if(navigator.onLine){
 			
@@ -40,8 +40,6 @@ $(document).ready(function() {
 
 	$('#accordion2').load('ajax/nav.php');
 	setHeight();
-	
-	
 });
 
 var setHeight = function(){
