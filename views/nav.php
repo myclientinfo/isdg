@@ -1,20 +1,6 @@
 <?php 
-
-include '../config.php';
-
-$content = new Content();
-
-if(!isset($_GET['admin'])){
-$nav = $content->getMainNav();
-} else {
-$nav = $content->getAdminNav();
-}
-?>
-
-<?php 
 $i = 1;
 foreach($nav as $sectionSlug => $section):
-	//print_r($section);
 ?>
 
 
@@ -28,9 +14,17 @@ foreach($nav as $sectionSlug => $section):
 <div class="accordion-inner">
 
     <ul>
-    	<?php foreach($section['pages'] as $pageSlug => $page): ?>
-        <li><a href="#<?php echo $page['page_title_slug']?>"><?php echo $page['page_title']?></a></li>
-      <?php endforeach; ?>
+    	<?php foreach($section['pages'] as $pageSlug => $page): 
+	    	if(isset($page['link'])){
+	    		$link = $page['link'];
+	    	} else {
+		    	$link = '/api/Content/'.$sectionSlug.'/'.$page['page_title_slug'];
+	    	}
+	    	
+    	?>
+        <li>
+        <a href="<?php echo $link?>?view"><?php echo $page['page_title']?></a></li>
+        <?php endforeach; ?>
     </ul>
 </div>
 </div>

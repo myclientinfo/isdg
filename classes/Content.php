@@ -43,11 +43,13 @@ class Content {
 						AND s.section_title_slug = ? ORDER BY pp.piece_order_number';
 		
 		$contObj = $this->db->prepare($sql);
+		
+		
 		$contObj->execute(array($page, $section));
 		
 		$content['data'] = $contObj->fetchAll();
 		$content['subnav'] = $this->getSubnav($content['data']);
-		
+		//print_r($content);
 		return $content;
 	}
 	
@@ -69,34 +71,22 @@ class Content {
 		$navStructure['admin-sections']['section_title'] = 'Section Admin';
 		$navStructure['admin-sections']['primary_colour'] = '';
 		$navStructure['admin-sections']['secondary_colour'] = '';
-		$navStructure['admin-sections']['pages']['add-section'] = array('page_title' => 'Add Section', 
-																'page_title_slug' => '/api/Content/new/?view'
-																);
-		$navStructure['admin-sections']['pages']['edit-piece'] = array('page_title' => 'Edit Sections', 
-																'page_title_slug' => '/api/List/Section?view'
-																);														
+		$navStructure['admin-sections']['pages']['new'] = array('page_title' => 'Add Section', 'link' => '/api/Admin/new/');
+		$navStructure['admin-sections']['pages']['edit'] = array('page_title' => 'Edit Sections', 'link' => '/api/List/Section');
 																
 																
 		$navStructure['admin-pages']['section_title'] = 'Page Admin';
 		$navStructure['admin-pages']['primary_colour'] = '';
 		$navStructure['admin-pages']['secondary_colour'] = '';
-		$navStructure['admin-pages']['pages']['add-section'] = array('page_title' => 'Add Page', 
-																'page_title_slug' => '/api/Content/new/new/?view'
-																);
-		$navStructure['admin-pages']['pages']['edit-piece'] = array('page_title' => 'Edit Page', 
-																'page_title_slug' => '/api/List/Page?view'
-																);
+		$navStructure['admin-pages']['pages']['new'] = array('page_title' => 'Add Page', 'link' => '/api/Admin/new/new/');
+		$navStructure['admin-pages']['pages']['edit'] = array('page_title' => 'Edit Page', 'link' => '/api/List/Page');
 																
 		
 		$navStructure['admin-pieces']['section_title'] = 'Piece Admin';
 		$navStructure['admin-pieces']['primary_colour'] = '';
 		$navStructure['admin-pieces']['secondary_colour'] = '';
-		$navStructure['admin-pieces']['pages']['add-section'] = array('page_title' => 'Add Pieces', 
-																'page_title_slug' => '/api/Content/new/new/new/?view'
-																);
-		$navStructure['admin-pieces']['pages']['edit-piece'] = array('page_title' => 'Edit Pieces', 
-																'page_title_slug' => '/api/List/Piece?view'
-																);
+		$navStructure['admin-pieces']['pages']['new'] = array('page_title' => 'Add Pieces', 'link' => '/api/Admin/new/new/new/');
+		$navStructure['admin-pieces']['pages']['edit'] = array('page_title' => 'Edit Pieces', 'link' => '/api/List/Piece');
 		
 		return $navStructure;
 	}

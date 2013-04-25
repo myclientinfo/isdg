@@ -8,31 +8,40 @@ Flight::set('flight.views.path', $_SERVER['DOCUMENT_ROOT'].'/views');
 Flight::register('db', 'Database');
 Flight::register('content', 'Content');
 
-Flight::set('contentObject', Flight::content());
 
-Flight::route('GET /Nav/(@type)', function($type){
+
+
+Flight::route('GET /Nav(/@type)', function($type = 'Content'){
+	
+	if($type=='Admin'){
+		$nav = Flight::content()->getAdminNav();
+	} else {
+		$nav = Flight::content()->getMainNav();
+	}
+	
+	if(isset(Flight::request()->query['view'])){
+		Flight::render('nav', array('nav' => $nav, 'type' => $type));
+	} else {
+		Flight::json($nav);
+	}
 	
 });
 
 Flight::route('GET /List/@type', function($type){
 
 	Flight::register('data', $type);
-    $content = Flight::data();
     
-    $data = $content->getList();
+    $data = Flight::data()->getList();
     
-    
-    if(!isset($_REQUEST['view'])){
+    if(!isset(Flight::request()->query['view'])){
 	    Flight::json($data);
     } else {
-	    Flight::render('list.php', array('data' => $data, 'type' => $type));
+	    Flight::render('list', array('data' => $data, 'type' => $type));
     }
 });
 
 
-Flight::route('GET /Content(/@section(/@page(/@piece)))', function($section, $page, $piece){
-	
-	
+Flight::route('GET /Admin(/@section(/@page(/@piece)))', function($section, $page, $piece){
 	
 	if($piece) $type = 'Piece';
     else if($page) $type = 'Page';
@@ -64,8 +73,20 @@ Flight::route('GET /Content(/@section(/@page(/@piece)))', function($section, $pa
 });
 
 
-// create a peice
-Flight::route('POST|PUT /Content(/@section(/@page(/@piece)))', function($section, $page, $piece){
+Flight::route('GET /Content(/@section(/@page))', function($section, $page){
+	
+    $data = Flight::content()->getContent($section, $page);
+    
+    if(!isset($_REQUEST['view'])){
+	    Flight::json($data);
+    } else {
+   	    Flight::render('content', array('pageContent' => $data));
+    }
+
+});
+
+
+Flight::route('POST|PUT /Admin(/@section(/@page(/@piece)))', function($section, $page, $piece){
 	
 	if($_POST['method'] == 'POST'){
 	

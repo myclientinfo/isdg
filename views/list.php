@@ -11,7 +11,7 @@
 	<th>Order</th>
 </tr>
 <?php foreach($data as $row){ 
-	$link = '/api/Content/'.$row['section_title_slug'];
+	$link = '/api/Admin/'.$row['section_title_slug'];
 	if($type != 'Section') $link .= '/'.$row['page_title_slug'];
 	if($type == 'Piece') $link .= '/'.$row['id'];
 	$link .= '?view';

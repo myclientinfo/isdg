@@ -1,37 +1,26 @@
+
+
 <?php 
-//print_r($_GET);
-
-require_once '../config.php';
-$section = 'building-scheme-design';
-$page = 'structural-loads';
-
-
-$section = $_GET['section'];
-$page = $_GET['page'];
-
-$content = new Content();
-$pageContent = $content->getContent($section, $page);
-
-//print_r($pageContent);
+//print_r();	
+	
 ?>
-
-<ul class="nav nav-pills <?php echo $section ?>">
+<ul class="nav nav-pills <?php echo $pageContent['data'][0]['section_title_slug'] ?>">
 <?php foreach($pageContent['data'] as $piece):
+
 ?>
-<li><a href="#<?php echo $piece['piece_slug']?>"><?php echo $piece['piece_short_title']?></a></li>
+<li><a href="#<?php echo $piece['piece_title_slug']?>"><?php echo $piece['piece_title_short']?></a></li>
 <?php endforeach; ?>
 </ul>
 
-<div id="page-content" class="<?php echo $section ?>">
+<div id="page-content" class="<?php echo $pageContent['data'][0]['section_title_slug'] ?>">
 <?php foreach($pageContent['data'] as $piece):
 ?>
-<h2 id="<?php echo $piece['piece_slug']?>"><?php echo $piece['piece_title']?></h2>
+<h2 id="<?php echo $piece['piece_title_slug']?>"><?php echo $piece['piece_title_short']?></h2>
 
 <?php echo $piece['content']?>
 
 <?php endforeach; ?>
 </div>
-
 <?
 die();
 if($_GET['category'] == 'structural-loads'){?>
@@ -70,10 +59,7 @@ if($_GET['category'] == 'structural-loads'){?>
 
 
 <h3>Office Parking</h3>
-<p>
-Across car spaces: 	7.5m (3 car spaces x 2.4m + 0.3m col)
-	10.0m (4 car spaces x 2.4m + 0.4m col)<br>
-Across aisle and spaces: 	8.3m (2 parking bays back to back) </p>
+
 
 <h3>Retail / Shopping Centres</h3>
 

@@ -6,9 +6,7 @@ $(document).ready(function() {
 		theEvent.preventDefault();
 		if(navigator.onLine){
 			
-			var section = $('a.accordion-toggle', $(this).closest('.accordion-group')).data('section');
-			
-			$.get('ajax/content.php', {section: section, page: $(this).attr('href').replace('#', '')}, function(dataResponse){
+			$.get($(this).attr('href'), function(dataResponse){
 				$('#section-content').html(dataResponse);
 				setHeight();
 			});
@@ -36,13 +34,13 @@ $(document).ready(function() {
 	     event.stopPropagation();
 	 });
 
-	$(window).resize(setHeight);
+	$('#accordion2').load('/api/Nav/?view');
 
-	$('#accordion2').load('ajax/nav.php');
-	setHeight();
 });
 
 var setHeight = function(){
+	console.log('run');
 	var final_height = $(window).height() - ($('#page-content').offset().top + 80);
 	$('#page-content').height(final_height);
 };
+

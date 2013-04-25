@@ -2,11 +2,9 @@
 
 $new = empty($data);
 
+$link = '/api/Admin';
 
 
-$link = '/api/Content';
-
-echo $type;
 
 if($new) $link .= '/new';
 else $link .= '/'.$data['section_title_slug'];
@@ -19,9 +17,9 @@ if($type == 'Piece'){
 	if($new) $link .= '/new';
 	else $link .= '/'.$data['id'];
 }
-
+print_r($data);
 ?>
-
+<h2><?php echo $type?></h2>
 
 	<form class="form-horizontal" action="<?php echo $link?>" method="POST">
 	<input type="hidden" name="method" id="method" value="<?php echo $new ? 'POST' : 'PUT'?>">

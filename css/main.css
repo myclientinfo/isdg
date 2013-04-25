@@ -116,38 +116,60 @@ nav img {
 
 }
 
-#accordion2 div.accordion-group.building-scheme-design .accordion-heading a, #section-content .building-scheme-design li a:hover, 
- #accordion2 div.accordion-group.admin-pieces .accordion-heading a, #section-content .admin-pieces li a:hover {
+
+
+
+#accordion2 div.accordion-group.building-scheme-design .accordion-heading a, 
+	#section-content .building-scheme-design li a:hover, 
+		#accordion2 div.accordion-group.admin-sections .accordion-heading a {
 	background-color: #06C;
 }
 
-.building-scheme-design li, .admin-pieces li {
+div.accordion-group.building-scheme-design li, .admin-sections li,
+	#section-content ul.building-scheme-design li  {
 	background-color: #09F;
 }
 
-#accordion2 div.accordion-group.materials .accordion-heading a, #accordion2 div.accordion-group.materials .accordion-heading a {
+
+
+
+#accordion2 div.accordion-group.materials .accordion-heading a, 
+	#section-content .materials li a:hover,
+		#accordion2 div.accordion-group.admin-pages .accordion-heading a {
 	background-color: #F60;
 }
 
-#accordion2 div.accordion-group.materials li {
+div.accordion-group.materials li, .admin-pages li {
 	background-color: #F93;
 }
 
-#accordion2 div.accordion-group.structural-elements .accordion-heading a {
+
+
+
+#accordion2 div.accordion-group.structural-elements .accordion-heading a, 
+	#section-content .building-scheme-design li a:hover,
+		#accordion2 div.accordion-group.admin-pieces .accordion-heading a {
 	background-color: #096;
 }
 
-#accordion2 div.accordion-group.structural-elements li {
+#accordion2 div.accordion-group.structural-elements li, .admin-pieces li {
 	background-color: #9C3;
 }
 
-#accordion2 div.accordion-group.interface-guides .accordion-heading a {
+
+
+
+#accordion2 div.accordion-group.interface-guides .accordion-heading a, 
+	#section-content .building-scheme-design li a:hover {
 	background-color: #609;
 }
 
 #accordion2 div.accordion-group.interface-guides li {
 	background-color: #90C;
 } 
+
+
+
 
 .accordion-group {
 	border-width:0px;
