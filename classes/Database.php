@@ -27,9 +27,18 @@ class Database {
    public static function getInstance(  ) {
            
         if(!self::$objInstance){
-            $pdo_options =
-
-            self::$objInstance = new PDO(Database::DB_DSN, Database::DB_USER, Database::DB_PASS);
+        
+        	if($_SERVER['HTTP_HOST'] == 'isdg'){
+	        	$dsn = Database::DB_DSN;
+	        	$dsn = Database::DB_USER;
+	        	$dsn = Database::DB_PASS;
+        	} else {
+	        	$dsn = 'mysql:host=isdg.mysql.eu1.frbit.com;port=3306;dbname=isdg';
+	        	$user = 'isdg';
+	        	$pass = 'siMyN8R6ap7EDby9';
+        	}
+        
+            self::$objInstance = new PDO($dsn, $user, $pass);
             self::$objInstance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             self::$objInstance->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             //self::$objInstance->setFetchMode(PDO::FETCH_ASSOC);
