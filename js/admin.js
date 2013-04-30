@@ -35,11 +35,23 @@ $(document).ready(function() {
 	$(document).on('submit', 'form', function(theEvent){
 		
 		theEvent.preventDefault();
+		/*
 		
 		$.post($(this).attr('action'), $(this).serialize(), function(){
 			alert('Updated');
 		});
 		
+		
+		*/
+		$.ajax({
+			url: $(this).attr('action'), 
+			data: $(this).serialize(),
+			type: 'PUT', 
+			success: function(){
+				
+				
+			}
+		});
 	});
 
 
@@ -67,7 +79,6 @@ $(document).ready(function() {
 
 
 var setHeight = function(){
-	console.log('run');
-	var final_height = $(window).height() - ($('#page-content').offset().top + 80);
-	$('#page-content').height(final_height);
+	var final_height = $(window).height() - ($('#section-content').offset().top + 80);
+	$('#section-content').height(final_height);
 };

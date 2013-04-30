@@ -17,7 +17,6 @@ if($type == 'Piece'){
 	if($new) $link .= '/new';
 	else $link .= '/'.$data['id'];
 }
-print_r($data);
 ?>
 <h2><?php echo $type?></h2>
 
@@ -62,3 +61,6 @@ print_r($data);
 	</button>
 	
 	</form>
+	
+	
+

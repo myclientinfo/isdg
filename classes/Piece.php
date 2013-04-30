@@ -65,7 +65,7 @@ class Piece extends Content {
 					piece_title_short = :piece_title_short, piece_order_number = :piece_order_number, content = :content 
 					WHERE id = :id';
 		
-		echo $sql;
+		
 		$contObj = $this->db->prepare($sql);
 		
 		$post_data = array(':page_id' => $_POST['page_id'], 
@@ -77,7 +77,7 @@ class Piece extends Content {
 							':id' => $_POST['id'] );
 		
 		$contObj->execute($post_data);
-		print_r($post_data);
+		
 		return $_POST['id'];
 	}
 	

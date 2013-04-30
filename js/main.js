@@ -2,7 +2,6 @@
 $(document).ready(function() {
 
 	$(document).on('click', '.accordion-inner a', function(theEvent){
-		
 		theEvent.preventDefault();
 		if(navigator.onLine){
 			
@@ -39,7 +38,6 @@ $(document).ready(function() {
 });
 
 var setHeight = function(){
-	console.log('run');
 	var final_height = $(window).height() - ($('#page-content').offset().top + 80);
 	$('#page-content').height(final_height);
 };

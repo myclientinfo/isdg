@@ -47,7 +47,7 @@ class Section extends Content {
 							':section_order_number' => $_POST['section_order_number']);
 		
 		$contObj->execute($post_data);
-		print_r($post_data);
+		
 		return $contObj->lastInsertId();
 		
 	}

@@ -43,27 +43,25 @@ Flight::route('GET /List/@type', function($type){
 
 Flight::route('GET /Admin(/@section(/@page(/@piece)))', function($section, $page, $piece){
 	
+	
 	if($piece) $type = 'Piece';
     else if($page) $type = 'Page';
     else $type = 'Section';
     
     Flight::register('data', $type);
-    $content = Flight::data();
-    $data = $content->getData($section, $page, $piece);
     
-    
+    $data = Flight::data()->getData($section, $page, $piece);
     
     if(!isset($_REQUEST['view'])){
 	    Flight::json($data);
     } else {
-    	$structure = $content->getStructure();
+    	$structure = Flight::data()->getStructure();
     	
     	foreach($structure as $k => &$s){
 	    	if($s['type']=='select'){
 	    		
 	    		Flight::register('temp', $s['label']);
-	    		$temp = Flight::temp();
-	    		$s['values'] = $temp->getList();
+	    		$s['values'] = Flight::temp()->getList();
 		    	
 	    	}
     	}
@@ -86,7 +84,27 @@ Flight::route('GET /Content(/@section(/@page))', function($section, $page){
 });
 
 
+
+Flight::route('GET /Project/@project_number/@module/@request', function($project_number, $module, $request){
+	
+	
+});
+
+
+Flight::route('POST /Project/@project_number/@module/@request', function($project_number, $module, $request){
+	
+	
+});
+
+
+
 Flight::route('POST|PUT /Admin(/@section(/@page(/@piece)))', function($section, $page, $piece){
+	
+	
+	echo '<pre>';
+	print_r(Flight::request());
+	die();
+	
 	
 	if($_POST['method'] == 'POST'){
 	
@@ -103,17 +121,13 @@ Flight::route('POST|PUT /Admin(/@section(/@page(/@piece)))', function($section, 
 	}
 
 	Flight::register('data', $type);
-    $content = Flight::data();
     
     if($_POST['method'] == 'POST'){
-    	$data = $content->add($section, $page, $piece);
+    	$data = Flight::data()->add($section, $page, $piece);
     } else {
-    	$data = $content->save($section, $page, $piece);
+    	$data = Flight::data()->save($section, $page, $piece);
     }
-    
-    
-    
-    
+
 	
 });
 

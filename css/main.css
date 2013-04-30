@@ -219,6 +219,17 @@ nav {
 	top: 45px;
 }
 
+
+textarea#content {
+	width: 500px;
+	height: 120px;
+}
+
+
+.form-horizontal .btn {
+	margin-left: 180px;
+}
+
 #wrap {
 	height: 100%;
 	margin-bottom: -60px;

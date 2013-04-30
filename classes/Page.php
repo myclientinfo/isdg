@@ -39,7 +39,7 @@ class Page extends Content {
 		
 		$sql = 'INSERT INTO pages(section_id, page_title, page_title_slug, page_title_short, page_order_number) 
 					VALUES (:section_id, :page_title, :page_title_slug, :page_title_short, :page_order_number)';
-		echo $sql;
+		
 		$contObj = $this->db->prepare($sql);
 		
 		$post_data = array(':section_id' => $_POST['section_id'], 

@@ -49,7 +49,7 @@ class Content {
 		
 		$content['data'] = $contObj->fetchAll();
 		$content['subnav'] = $this->getSubnav($content['data']);
-		//print_r($content);
+		
 		return $content;
 	}
 	

@@ -25,13 +25,14 @@ class Database {
      * @return $objInstance;
      */
    public static function getInstance(  ) {
-           
+        
+        
         if(!self::$objInstance){
         
         	if($_SERVER['HTTP_HOST'] == 'isdg'){
-	        	$dsn = Database::DB_DSN;
-	        	$dsn = Database::DB_USER;
-	        	$dsn = Database::DB_PASS;
+            	$dsn = Database::DB_DSN;
+	        	$user = Database::DB_USER;
+	        	$pass = Database::DB_PASS;
         	} else {
 	        	$dsn = 'mysql:host=isdg.mysql.eu1.frbit.com;port=3306;dbname=isdg';
 	        	$user = 'isdg';
