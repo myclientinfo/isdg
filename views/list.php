@@ -17,7 +17,7 @@
 	$link .= '?view';
 ?>
 <tr>
-	<td><a href="<?php echo $link ?>"><?php echo $row['title']?></a></td>
+	<td><a href="<?php echo $link ?>" data-type="<?php echo $type?>"><?php echo $row['title']?></a></td>
 	<?php if($type != 'Section'){ ?>
 	<td><?php echo $row['section_title']?></td>
 	<?php } ?>

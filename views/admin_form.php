@@ -16,6 +16,11 @@ if($type != 'Section'){
 if($type == 'Piece'){ 
 	if($new) $link .= '/new';
 	else $link .= '/'.$data['id'];
+	$GLOBALS['page_id'] = $data['page_id'];
+}
+
+if($type == 'Page'){
+	$GLOBALS['page_id'] = $data['id'];
 }
 ?>
 <h2><?php echo $type?></h2>
@@ -59,6 +64,7 @@ if($type == 'Piece'){
 	<button type="submit" class="btn btn-success">
 		Save
 	</button>
+
 	
 	</form>
 	
